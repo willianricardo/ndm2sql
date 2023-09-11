@@ -68,8 +68,8 @@ func Execute() error {
 	}
 
 	sql := generateSQLFromNDM2File(parsedData)
-	err = saveToFile(sql, outputFilePath)
-	if err != nil {
+
+	if os.WriteFile(outputFilePath, []byte(sql), 0644); err != nil {
 		return err
 	}
 
@@ -173,8 +173,4 @@ func parseFile(filePath string) (NDM2File, error) {
 	}
 
 	return data, nil
-}
-
-func saveToFile(text string, filename string) error {
-	return os.WriteFile(filename, []byte(text), 0644)
 }
