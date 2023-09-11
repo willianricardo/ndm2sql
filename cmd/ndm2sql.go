@@ -8,33 +8,15 @@ import (
 )
 
 type PrimaryKey struct {
-	ObjectType      string   `json:"objectType"`
-	Name            string   `json:"name"`
-	Fields          []string `json:"fields"`
-	FillFactor      int      `json:"fillFactor"`
-	IndexTablespace string   `json:"indexTablespace"`
-	Comment         string   `json:"comment"`
-	IsDeferrable    bool     `json:"isDeferrable"`
-	IsDeferred      bool     `json:"isDeferred"`
-	OldName         string   `json:"oldName"`
+	Name   string   `json:"name"`
+	Fields []string `json:"fields"`
 }
 
 type ForeignKey struct {
-	ObjectType        string   `json:"objectType"`
-	Name              string   `json:"name"`
-	Fields            []string `json:"fields"`
-	ReferenceSchema   string   `json:"referenceSchema"`
-	ReferenceTable    string   `json:"referenceTable"`
-	ReferenceFields   []string `json:"referenceFields"`
-	OnDelete          string   `json:"onDelete"`
-	OnUpdate          string   `json:"onUpdate"`
-	Comment           string   `json:"comment"`
-	IsMatchFull       bool     `json:"isMatchFull"`
-	IsDeferrable      bool     `json:"isDeferrable"`
-	IsDeferred        bool     `json:"isDeferred"`
-	SourceCardinality string   `json:"sourceCardinality"`
-	TargetCardinality string   `json:"targetCardinality"`
-	OldName           string   `json:"oldName"`
+	Name            string   `json:"name"`
+	Fields          []string `json:"fields"`
+	ReferenceTable  string   `json:"referenceTable"`
+	ReferenceFields []string `json:"referenceFields"`
 }
 
 type TableField struct {
@@ -42,12 +24,9 @@ type TableField struct {
 	Type         string `json:"type"`
 	Length       int    `json:"length"`
 	Decimals     int    `json:"decimals"`
-	Dimensions   int    `json:"dimensions"`
-	Collation    string `json:"collation"`
 	IsNullable   bool   `json:"isNullable"`
 	DefaultType  string `json:"defaultType"`
 	DefaultValue string `json:"defaultValue"`
-	Comment      string `json:"comment"`
 }
 
 type Table struct {
